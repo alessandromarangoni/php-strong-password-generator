@@ -1,6 +1,6 @@
+
 <?php
-$lunghezza=intval($_GET["lunghezza"]);
-function generateRandomString($length = 0,) {
+function generateRandomString($length = 1) {
     global $password;
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);

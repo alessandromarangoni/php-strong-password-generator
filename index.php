@@ -18,13 +18,8 @@ include "./function.php";
                 <h1>STRONG PASSWORD GENERATOR</h1>
                 <h3>Genera una password sicura </h3>
                 <div class="bg-primary text-white rounded mb-2 pt-2">
-                    <?php if ($lunghezza) { 
-                        echo generateRandomString($length = $lunghezza);
-                    } else{
-                        echo 'NESSUN CAMPO COMPILATO';
-                    }?>
                 <div class="pt-3">
-                    <form action="index.php" method="get" class="form-control">
+                    <form action="result.php" method="get" class="form-control">
                         <input  class="form-control" type="number" name="lunghezza" placeholder="inserisci la lunghezza desiderata" min="3" max="25">
                         <button type="submit" class="btn btn-primary mt-3">genera</button>
                     </form>
