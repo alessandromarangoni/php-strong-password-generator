@@ -9,18 +9,7 @@
     <title>"strong" p generator</title>
 </head>
 <?php
-$lunghezza=intval($_GET["lunghezza"]);
-function generateRandomString($length = 0,) {
-    global $password;
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[random_int(0, $charactersLength - 1)];
-    }
-    $password=$randomString;
-    return $randomString;
-}
+include "./function.php";
 ?>
 <body>
     <div class="container bg-secondary mt-5 pb-5 rounded">
