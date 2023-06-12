@@ -1,3 +1,12 @@
+<?php 
+include "./function.php";
+if (isset($_GET['lunghezza'])){ 
+$lunghezza = intval($_GET["lunghezza"]);
+session_start();
+$result = generateRandomString($lunghezza);
+$_SESSION["password"] = $result;
+header("location: ./result.php");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title>"strong" p generator</title>
 </head>
-<?php
-include "./function.php";
-?>
 <body>
     <div class="container bg-secondary mt-5 pb-5 rounded">
         <div class="row">
@@ -19,7 +25,7 @@ include "./function.php";
                 <h3>Genera una password sicura </h3>
                 <div class="bg-primary text-white rounded mb-2 pt-2">
                 <div class="pt-3">
-                    <form action="result.php" method="get" class="form-control">
+                    <form action="index.php" method="get" class="form-control">
                         <input  class="form-control" type="number" name="lunghezza" placeholder="inserisci la lunghezza desiderata" min="3" max="25">
                         <button type="submit" class="btn btn-primary mt-3">genera</button>
                     </form>

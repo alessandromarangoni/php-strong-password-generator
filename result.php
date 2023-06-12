@@ -1,7 +1,5 @@
 <?php 
 session_start();
-include "./function.php";
-$lunghezza =intval($_GET["lunghezza"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,17 +15,12 @@ $lunghezza =intval($_GET["lunghezza"]);
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-4 text-center">
+                <?php echo $_SESSION["password"] ?>
                 <button> <a href="./index.php">termina sessione</a></button>
-            <?php if ($lunghezza){ 
-                        echo generateRandomString($length = $lunghezza);
-                    } else{
-                        echo 'NESSUN CAMPO COMPILATO';
-                    }
-                    ?>
             </div>
         </div>
     </div>
 
 </body>
 </html>
-<?php session_destroy(); ?>
+<?php session_destroy() ?>
